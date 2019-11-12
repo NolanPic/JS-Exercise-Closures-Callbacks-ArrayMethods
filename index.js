@@ -160,8 +160,20 @@ function processContains(item, list, callback) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+function processDuplicateFree(list, callback) {
+  // array to hold all items that are unique
+  const uniqueItems = [];
+
+  // iterate items
+  list.forEach(item => {
+
+    // if uniqueItems doesn't already include the current item, push it
+    if(!uniqueItems.includes(item)) {
+      uniqueItems.push(item);
+    }
+  });
+
+  return callback(uniqueItems);
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -288,7 +300,7 @@ function counterMaker() {
 function counterMakerWithLimit() {
   let count = -1;
   return function() {
-    
+
     if(count === 3) {
       count = -1;
     }
