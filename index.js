@@ -297,11 +297,11 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit() {
+function counterMakerWithLimit(max) {
   let count = -1;
   return function() {
 
-    if(count === 3) {
+    if(count === max) {
       count = -1;
     }
 
